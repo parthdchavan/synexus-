@@ -1,0 +1,161 @@
+@import "@fontsource/ibm-plex-sans/400.css";
+@import "@fontsource/ibm-plex-sans/500.css";
+@import "@fontsource/ibm-plex-sans/600.css";
+@import "@fontsource/ibm-plex-mono/400.css";
+@import "@fontsource/ibm-plex-mono/500.css";
+@import "@fontsource/ibm-plex-mono/600.css";
+@import "tailwindcss";
+
+@theme {
+  --font-sans: 'IBM Plex Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-mono: 'IBM Plex Mono', ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+}
+
+:root, html.dark {
+  color-scheme: dark;
+
+  /* Semantic Core Tokens - Dark */
+  --bg: #0a0c10;
+  --surface: #12151c;
+  --surface-raised: #181b24;
+  --surface-sunken: #0d0f14;
+
+  --border: #1e2330;
+  --border-strong: #2c3345;
+  --ring: #0ea5e9;
+
+  --text: #f1f5f9;
+  --text-secondary: #94a3b8;
+  --text-muted: #64748b;
+
+  --accent: #0ea5e9;
+  --accent-hover: #38bdf8;
+  --accent-subtle: rgba(14, 165, 233, 0.12);
+  --accent-text: #38bdf8;
+  --accent-foreground: #020617;
+
+  /* Semantic Status Tokens - Dark */
+  --status-ok-fg: #10b981;
+  --status-ok-bg: rgba(16, 185, 129, 0.12);
+  --status-ok-border: rgba(16, 185, 129, 0.28);
+
+  --status-warn-fg: #f59e0b;
+  --status-warn-bg: rgba(245, 158, 11, 0.12);
+  --status-warn-border: rgba(245, 158, 11, 0.28);
+
+  --status-error-fg: #ef4444;
+  --status-error-bg: rgba(239, 68, 68, 0.12);
+  --status-error-border: rgba(239, 68, 68, 0.28);
+
+  --status-planned-fg: #a78bfa;
+  --status-planned-bg: rgba(139, 92, 246, 0.12);
+  --status-planned-border: rgba(139, 92, 246, 0.28);
+
+  /* Radius & Shadows */
+  --radius-sm: 4px;
+  --radius-control: 6px;
+  --radius-panel: 8px;
+  --shadow-floating: 0 8px 24px rgba(0, 0, 0, 0.45);
+}
+
+html.light {
+  color-scheme: light;
+
+  /* Semantic Core Tokens - Premium Light */
+  --bg: #f6f7f9;
+  --surface: #ffffff;
+  --surface-raised: #ffffff;
+  --surface-sunken: #f1f3f6;
+
+  --border: #e3e6eb;
+  --border-strong: #cbd1da;
+  --ring: #0b66c3;
+
+  --text: #0f1729;
+  --text-secondary: #475467;
+  --text-muted: #667085;
+
+  --accent: #0b66c3;
+  --accent-hover: #0a57a6;
+  --accent-subtle: #e8f1fb;
+  --accent-text: #0b66c3;
+  --accent-foreground: #ffffff;
+
+  /* Semantic Status Tokens - Premium Light */
+  --status-ok-fg: #067647;
+  --status-ok-bg: #ecfdf3;
+  --status-ok-border: #abefc6;
+
+  --status-warn-fg: #b54708;
+  --status-warn-bg: #fffaeb;
+  --status-warn-border: #fedf89;
+
+  --status-error-fg: #b42318;
+  --status-error-bg: #fef3f2;
+  --status-error-border: #fecdca;
+
+  --status-planned-fg: #5b3cc4;
+  --status-planned-bg: #f4f1fe;
+  --status-planned-border: #d9cdfb;
+
+  --shadow-floating: 0 8px 24px rgba(15, 23, 41, 0.08);
+}
+
+/* Base resets & typography */
+* {
+  box-sizing: border-box;
+  border-color: var(--border);
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  font-family: var(--font-sans);
+  background-color: var(--bg);
+  color: var(--text);
+  font-size: 13.5px;
+  line-height: 1.5;
+  letter-spacing: -0.006em;
+  font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+}
+
+/* Tabular numerals for all precision values */
+.tabular-nums {
+  font-variant-numeric: tabular-nums;
+}
+
+/* Custom scrollbars */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--border-strong);
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--text-muted);
+}
+
+/* Color utility bindings */
+.bg-surface-0 { background-color: var(--bg); }
+.bg-surface-1 { background-color: var(--surface); }
+.bg-surface-2 { background-color: var(--surface-sunken); }
+.bg-surface-3 { background-color: var(--border-strong); }
+
+.border-subtle { border-color: var(--border); }
+.border-strong { border-color: var(--border-strong); }
+
+.text-text-primary { color: var(--text); }
+.text-text-secondary { color: var(--text-secondary); }
+.text-text-muted { color: var(--text-muted); }
+
+.bg-accent { background-color: var(--accent); }
+.text-accent { color: var(--accent-text); }
+.border-accent { border-color: var(--accent); }
